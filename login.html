@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel ="icon" href ="pimg/weblogo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <div class=" bg-gradient-to-r from-sky-300 to-sky-200 min-h-screen flex items-center justify-center">
+        <!--login container-->
+        <div class="bg-sky-400 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+
+            <!--image-->
+            <div class="w-1/2 md:block hidden">
+                <img class="rounded-2xl" src="pimg/gp2.jpg" alt="">
+            </div>
+
+            <!--form-->
+            <div class="md:w-1/2 px-8 md:px-16">
+                <div class="flex items-center">
+                    <h2 class="font-bold text-4xl text-white border bg-sky-900 border-none p-3">IT</h2>
+                    <h2 class="font-bold text-4xl text-sky-900 ml-2"> Insights</h2>
+                </div>
+                <p class="text-xs mt-4 text-sky-900 ">Log in with a predefined username and password</p>
+
+                <form action="" class="flex flex-col gap-4" id="login-form">
+                    <input class="p-2 mt-8 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-700" type="text" id="username" placeholder="Username" required>
+
+                    <div class="relative">
+                        <input  class="p-2 rounded-xl border w-full focus:outline-none focus:ring-2 focus:ring-sky-700" type="password" id="password" placeholder="Password" required>
+                        <img src="pimg/icons/hidden.png" alt="" class="w-6 h-6 cursor-pointer absolute top-2 right-3" id="eyeicon">
+                    </div>
+                    
+                    <button onclick="handleLogin()" type="submit" class="bg-sky-900 rounded-xl text-white py-2 hover:bg-sky-600">Login</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function handleLogin(){
+          document.getElementById("login-form").addEventListener("submit", function(event) {
+          event.preventDefault();
+          
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          
+          if (username === "ITstudents" && password === "IT2023") {
+            window.location.href = "mainpage.php";
+          } 
+          else {
+            alert("Invalid username or password. Please try again.");
+          }
+        });}
+    
+        var eyeicon= document.getElementById("eyeicon");
+        var password=document.getElementById("password");
+
+        eyeicon.onclick=function(){
+            if(password.type=="password"){
+                password.type="text";
+                eyeicon.src="pimg/icons/show.png";
+            }
+            else{
+                password.type="password";
+                eyeicon.src="pimg/icons/hidden.png";
+            }
+        }
+      </script>
+</body>
+</html>
