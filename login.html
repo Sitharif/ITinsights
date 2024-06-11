@@ -31,7 +31,7 @@
 
                     <div class="relative">
                         <input  class="p-2 rounded-xl border w-full focus:outline-none focus:ring-2 focus:ring-sky-700" type="password" id="password" placeholder="Password" required>
-                        <img src="pimg/icons/hidden.png" alt="" class="w-6 h-6 cursor-pointer absolute top-2 right-3" id="eyeicon">
+                        <img src="pimg/icon/hidden.png" alt="" class="w-6 h-6 cursor-pointer absolute top-2 right-3" id="eyeicon">
                     </div>
                     
                     <button onclick="handleLogin()" type="submit" class="bg-sky-900 rounded-xl text-white py-2 hover:bg-sky-600">Login</button>
@@ -63,11 +63,11 @@
         eyeicon.onclick=function(){
             if(password.type=="password"){
                 password.type="text";
-                eyeicon.src="pimg/icons/show.png";
+                eyeicon.src="pimg/icon/show.png";
             }
             else{
                 password.type="password";
-                eyeicon.src="pimg/icons/hidden.png";
+                eyeicon.src="pimg/icon/hidden.png";
             }
         }
       </script>
